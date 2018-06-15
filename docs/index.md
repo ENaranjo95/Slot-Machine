@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>House Hayden Slot Machine</title>
+  <link rel="stylesheet" href="css/slot.css">
+</head>
 
+<body>
+  <header>
+    <h1>Slot Machine</h1>
+  </header>
+
+  <section class="container clearfix">
+
+    <section>
+      <h4 id="results"></h4>
+    </section>
+
+    <section class="slot left">
+      <img id="firstSlot" src="img/tesla.png" alt="">
+      <button id="stopOne" type="button" name="button">Stop</button>
+    </section>
+
+    <section class="slot center">
+      <img id="secondSlot" src="img/tesla.png" alt="">
+      <button id="stopTwo" type="button" name="button">Stop</button>
+    </section>
+
+    <section class="slot right">
+      <img id="thirdSlot" src="img/tesla.png" alt="">
+      <button id="stopThree" type="button" name="button">Stop</button>
+    </section>
+
+    <section class="pot clearfix">
+      <h2 id="pot">0</h2>
+      <span>Pot</span>
+    </section>
+
+    <section class="bank clearfix">
+      <h2 id="player">0</h2>
+      <span>Bank Account</span>
+    </section>
+
+    <section class="buttons">
+      <button id="start" type="button">Spin</button>
+      <button type="button" id="min">$1</button>
+      <button type="button" id="max">$2</button>
+      <button id="stopAllThree">Stop All Three</button>
+      <section>
+        <input id="money" type="text" placeholder="Game Tokens">
+        <button id="enter" for="money">Enter</button>
+      </section>
+    </section>
+
+  </section>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="js/slot.js" type="text/javascript"></script>
+</body>
+</html>
