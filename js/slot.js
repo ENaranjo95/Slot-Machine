@@ -6,6 +6,7 @@
 // Win, bet gets add to  individual’s pot
 //Lose, bet gets subtracted to individual’s pot
 $(document).ready(function(){
+  var back = []
   $("#money").keydown(function (e) {
     // Allow: backspace, delete, tab, escape, enter and .
     if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
@@ -48,14 +49,18 @@ $(document).ready(function(){
   });
   //Event listener for amount of coins
   $('#enter').on('click',function(){
-    var money = parseInt( $('#money').val() )
-    bankAccount = money
-    $('#player').html(bankAccount)
-    $('#money').val('')
+    var money = parseInt( $('#money').Number.val() )
+    if( money === 0 ){
+      alert('Please purchase tokens!')
+    }else{
+      bankAccount += money
+      $('#player').html(bankAccount)
+      $('#money').val('')
+    }
   });
   //Event listener for min bet
   $('#min').on('click',function(){
-    if(bankAccount === 0){
+    if(bankAccount === 0 ){
       alert('Purchase tokens')
     }else{
       minBet()
@@ -75,7 +80,7 @@ $(document).ready(function(){
   //function call for minimal bet button
   function minBet(){
     //takes money from your bank account
-    bankAccount = bankAccount - min;
+    bankAccount -= min;
     //add that money into the game pot
     pot += (min * 2);
     $('#pot').html(pot)
@@ -85,7 +90,7 @@ $(document).ready(function(){
   //function call for maximum bet button
   function maxBet(){
     //takes money from your bank account
-    bankAccount = bankAccount - max;
+    bankAccount -= max;
     //deducts that money into the game pot
     pot += (max * 2);
     $('#pot').html(pot)
@@ -118,9 +123,7 @@ $(document).ready(function(){
   }
   //Event listener for spinning all 3 reels
   $('#start').on('click',function(){
-    if(bankAccount === 0){
-      alert('Purchase tokens')
-    }else if(pot === 0){
+    if(pot === 0){
       alert('Make a bet')
     }else{
       //starts a function that randomize the reel1
