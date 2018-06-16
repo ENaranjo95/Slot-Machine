@@ -49,7 +49,7 @@ $(document).ready(function(){
   });
   //Event listener for amount of coins
   $('#enter').on('click',function(){
-    var money = parseInt( $('#money').Number.val() )
+    var money = parseInt( $('#money').val() )
     if( money === 0 ){
       alert('Please purchase tokens!')
     }else{
