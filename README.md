@@ -1,1 +1,3 @@
 # Slot-Machine
+# slotMachine
+# slotMachine
